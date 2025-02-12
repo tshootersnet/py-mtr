@@ -68,7 +68,7 @@ Destination: {destination_fqdn} {destination_ip} {protocol if protocol else ''} 
         max_time = max(times)
         probes = len(times)
         loss = ((total_probes - successful_probes) / total_probes) * 100 if total_probes > 0 else 100
-        table_data.append([current_ttl, last_ip, f"{loss:.2f}%", f"{min_time:.2f}/{avg_time:.2f}/{max_time:.2f}", probes])
+        table_data.append([current_ttl, last_ip, f"{loss:.2f}%", f"{min_time:.2f} / {avg_time:.2f} / {max_time:.2f}", probes])
     else:
         loss = 100
         table_data.append([current_ttl, "*", f"{loss:.2f}%", "*", total_probes])
