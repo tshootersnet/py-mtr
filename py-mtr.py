@@ -33,7 +33,7 @@ def parse_arguments():
     parser.add_argument('--port', type=int, help='Port to use for UDP/TCP probes')
     parser.add_argument('--source', help='Source IP address', default=get_default_ip())
     parser.add_argument('-c', '--probes', type=int, help='Number of probes per hop', default=3)
-    parser.add_argument('--max_hops', type=int, help='Maximum number of hops', default=10)
+    parser.add_argument('--max-hops', type=int, help='Maximum number of hops', default=10)
     args = parser.parse_args()
 
     if (args.protocol == 'UDP' or args.protocol == 'TCP') and args.port is None:
@@ -62,7 +62,7 @@ def main():
     logging.info(f'Starting trace to {args.destination} using {protocol} protocol from source IP {args.source}')
 
     # Perform the trace
-    results = perform_trace(args.destination, protocol, args.port, args.dns, args.probes, args.max_hops, args.source)
+    results = perform_trace(args.destination, protocol, args.port, args.dns, args.probes, args.max-hops, args.source)
 
     # Format and print results
     formatted_results = format_results(results, args.destination, protocol, args.port, args.dns, args.source)
