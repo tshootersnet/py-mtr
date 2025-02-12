@@ -62,7 +62,7 @@ def main():
     logging.info(f'Starting trace to {args.destination} using {protocol} protocol from source IP {args.source}')
 
     # Perform the trace
-    results = perform_trace(args.destination, protocol, args.port, args.dns, args.probes, args.max-hops, args.source)
+    results = perform_trace(args.destination, protocol, args.port, args.dns, args.probes, args.max_hops, args.source)
 
     # Format and print results
     formatted_results = format_results(results, args.destination, protocol, args.port, args.dns, args.source)
