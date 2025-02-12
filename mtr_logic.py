@@ -3,7 +3,7 @@ import logging
 import random
 from scapy.all import IP, ICMP, UDP, TCP, ESP, sr1, Raw
 
-def perform_trace(destination, protocol, port=None, dns_lookup=False, num_probes=3, max-hops=30, source=None):
+def perform_trace(destination, protocol, port=None, dns_lookup=False, num_probes=3, max_hops=30, source=None):
     timeout = 2
     ident = random.randint(0, 65535)  # Initialize the IP identification field
 
@@ -11,9 +11,9 @@ def perform_trace(destination, protocol, port=None, dns_lookup=False, num_probes
     protocol = protocol.upper()  # Convert protocol to uppercase
     src_ip = None  # Initialize src_ip
 
-    logging.info(f"Tracing route to {destination} with max {max-hops} hops using {protocol} protocol")
+    logging.info(f"Tracing route to {destination} with max {max_hops} hops using {protocol} protocol")
 
-    for ttl in range(1, max-hops + 1):
+    for ttl in range(1, max_hops + 1):
         successful_probes = 0
         total_probes = 0
         for _ in range(num_probes):
